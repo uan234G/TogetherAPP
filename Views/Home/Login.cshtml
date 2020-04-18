@@ -1,0 +1,47 @@
+﻿@model Login
+
+@section Landing{
+    <link rel="stylesheet" href="~/css/LogReg.css">
+    <link rel="stylesheet" href="~/css/Queries.css">
+}
+
+<header id="LogReg-header">
+    <div class="wrapper nav">
+        <div class="logo">
+            <a asp-action="LandingPage" asp-controller="Home">
+                <h1 class="abril">Together</h1>
+            </a>
+        </div>
+        <div class="nav-links">
+            <ul>
+                <li>
+                    <a asp-action="SelectRole" asp-controller="Home" class="standout-btn">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<section id="log-body" class="wrapper">
+    <div class="log-container" data-aos="zoom-in">
+        <h3>Login</h3>
+        <form asp-action="LoginUser" asp-controller="Home" method="POST">
+
+            <label asp-for="LoginEmail">
+            Email: <span asp-validation-for="LoginEmail" class="red"></span>
+            </label>
+            <input asp-for="LoginEmail" placeholder="Enter email">
+
+            <label asp-for=LoginPassword>
+            Password: <span asp-validation-for="LoginPassword" class="red"></span>
+            </label>
+            <div id="pwd-box">
+            <input asp-for="LoginPassword" placeholder="Enter password" id="password" type="password">
+            <span id="show-pwd" onclick="showPwd()"><i class="far fa-eye"></i></span>
+            </div>
+
+            <input type="submit" class="form-btn" value="LOGIN">
+        </form>
+        <a asp-action="SelectRole" asp-controller="Home" class="form-redirect-link width-link">Don't have an account?</a>
+    </div>
+</section>
