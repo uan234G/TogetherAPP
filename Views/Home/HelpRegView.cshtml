@@ -16,7 +16,7 @@
         <div class="nav-links">
             <ul>
                 <li>
-                    <a asp-action="Login" asp-controller="Home" class="standout-btn">Login</a>
+                    <a asp-action="Login" asp-controller="Home">Login</a>
                 </li>
             </ul>
         </div>
@@ -68,6 +68,11 @@
                     <label asp-for="VenmoId">Venmo ID * <span asp-validation-for="VenmoId" class="red"></span></label>
                     <input asp-for="VenmoId" placeholder="Enter your Venmo ID">
                 </div>
+
+                <div class="inputs">
+                    <label asp-for="ZipCode">Zip Code * <span asp-validation-for="ZipCode" class="red"></span></label>
+                    <input asp-for="ZipCode" placeholder="Enter your zip code">
+                </div>
             </div>
 
             <label asp-for="Password">Password * <span asp-validation-for="Password" class="red"></span></label>
@@ -75,16 +80,6 @@
 
             <label asp-for="Confirm">Confirm Password <span asp-validation-for="Confirm" class="red"></span></label>
             <input asp-for="Confirm" placeholder="Confirm password">
-
-            <hr>
-            <div class="single-row">
-
-                <div class="inputs">
-                    <label asp-for="ZipCode">Zip Code * <span asp-validation-for="ZipCode" class="red"></span></label>
-                    <input asp-for="ZipCode" placeholder="Enter your zip code">
-                </div>
-
-            </div>
 
             <input type="hidden" asp-for="Status" value="true">
             <input type="submit" class="form-btn" value="REGISTER">

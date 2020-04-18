@@ -4,7 +4,7 @@
 }
 /* Dashboard navigation */
 .mobile-dashNav,
-#open-dashNav{
+#dash-btn{
     display: none;
 }
 #Dash-header .logo h1,
@@ -14,27 +14,14 @@
 #Dash-header .nav-links li a,
 #Details-header .nav-links li a{
     color: #243f51;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    padding: 2px 20px;
+    border-bottom: 2px solid transparent;
+    padding: 1px 3px;
     transition: all 0.5s ease-out;
 }
 #Dash-header .nav-links li:hover a,
 #Details-header .nav-links li:hover a{
     border-color: #243f51;
     transition: border-color 0.3s ease-in;
-}
-#Dash-header .nav-links #request-btn,
-#Details-header .nav-links #request-btn{
-    color: #243f51;
-    border-color: #243f51;
-    transition: all 0.5s ease-out;
-}
-#Dash-header .nav-links #request-btn:hover,
-#Details-header .nav-links #request-btn:hover{
-    background-color: #243f51;
-    color: #fff;
-    transition: all 0.3s ease-in;
 }
 
 /* Dashboard body */
@@ -95,16 +82,7 @@ table .view-btn:active{
     margin-top: 2rem;
 }
 .person-info-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.person-info-container .person-image{
-    height: 40vh;
-    width: 40%;
-}
-.person-info-container .person-info-text{
-    width: 55%;
+    width: 100%;
 }
 #detail-content{
     width: 45%;
