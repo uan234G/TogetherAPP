@@ -15,13 +15,13 @@
                 @if (ViewBag.CurrentUser.Status == false)
                 {
                     <li>
-                        <a asp-action="HelperDetails" asp-route-UserId="@ViewBag.CurrentUser.UserId" asp-controller="Home" id="request-btn" class="standout-btn">View Profile</a>
+                        <a asp-action="HelperDetails" asp-route-UserId="@ViewBag.CurrentUser.UserId" asp-controller="Home">View Profile</a>
                     </li>
                 }
                 @if(ViewBag.CurrentUser.Status == true)
                 {
                     <li>
-                        <a asp-action="RequestForm" asp-controller="Home" id="request-btn" class="standout-btn">Make a request</a>
+                        <a asp-action="RequestForm" asp-controller="Home">Make a request</a>
                     </li> 
                     <li>
                         <a asp-action="Detail" asp-route-Uid="@ViewBag.CurrentUser.UserId" asp-controller="Home">View Profile</a>
@@ -32,23 +32,25 @@
                 </li>
             </ul>
         </div>
-        <span id="open-dashNav" onclick="openDash()">&#9776</span>
+        <div id="dash-btn" onclick="dashNav()">
+            <span id="menu-icon"></span>
+        </div>
 
     </div>
 </header>
 
 <div class="mobile-dashNav">
-    <ul>
+     <ul>
         @if (ViewBag.CurrentUser.Status == false)
         {
             <li>
-                <a asp-action="HelperDetails" asp-route-UserId="@ViewBag.CurrentUser.UserId" asp-controller="Home" id="request-btn" class="standout-btn">View Profile</a>
+                <a asp-action="HelperDetails" asp-route-UserId="@ViewBag.CurrentUser.UserId" asp-controller="Home">View Profile</a>
             </li>
         }
         @if(ViewBag.CurrentUser.Status == true)
         {
             <li>
-                <a asp-action="RequestForm" asp-controller="Home" id="request-btn" class="standout-btn">Make a request</a>
+                <a asp-action="RequestForm" asp-controller="Home">Make a request</a>
             </li> 
             <li>
                 <a asp-action="Detail" asp-route-Uid="@ViewBag.CurrentUser.UserId" asp-controller="Home">View Profile</a>
@@ -58,7 +60,6 @@
             <a asp-action="Logout" asp-controller="Home">Logout</a>
         </li>
     </ul>
-    <span id="close-dashNav" onclick="closeDash()">&times;</span>
 </div>
 
 <section id="dash-main" class="wrapper">
@@ -67,8 +68,8 @@
                 <tr>
                     <th>Name</th>
                     <th id="address-th">Zipcode</th>
-                    <th>Request Urgency</th>
-                    <th id="action-th">Action</th>
+                    <th>Needed By</th>
+                    <th id="action-th">View</th>
                 </tr>
             </thead>
             
