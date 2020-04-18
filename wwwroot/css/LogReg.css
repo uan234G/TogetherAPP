@@ -150,13 +150,13 @@ form .single-row .inputs{
 }
 #LogReg-header .nav-links a{
     color: #243f51;
-    border-color: #243f51;
+    border-bottom: 2px solid transparent;
+    padding: 1px 3px;
     transition: all 0.5s ease-out;
 }
 #LogReg-header .nav-links a:hover{
-    background-color: #243f51;
-    color: #fff;
-    transition: all 0.3s ease-in;
+    border-color: #243f51;
+    transition: border-color 0.3s ease-in;
 }
 #log-body,
 #reg-body,
@@ -225,7 +225,7 @@ form .single-row .inputs{
     margin-bottom: 5rem;
 }
 .explanation-card{
-    width: 45%;
+    width: 50%;
     background-color: #fff;
     padding: 3rem;
     height: auto;
