@@ -26,54 +26,50 @@
 <section id="helperDetails-main" class="wrapper">
 
     <div id="helper-details" class="person-info-container">
-        @* @if (@Model.ImageUrl == null)
-        { *@
-            <div class="person-image">
-                <form id="iconUpdate" asp-action="AddAvatar" asp-route-UserId="@Model.UserId" asp-controller="Home" method="POST">
-                    <input asp-for="ImageUrl" type="hidden" id="iconval">
-                </form>
-                @if (@Model.ImageUrl == null)
-                {
-                    <div class="icon-container">
-                        <div>Click to pick avatar</div><br />
-                        <div class="avatarList">
-                            <div class="mainImg"><img src="https://cdn.pixabay.com/photo/2017/11/10/04/47/user-2935373_1280.png"></div>
-                            <div id="divCircle">
-                                <div id="middleBubble"></div>
-                                <img src="https://img.icons8.com/wired/64/000000/cow.png"/>
-                                <img src="http://png-3.findicons.com/files/icons/1072/face_avatars/300/c05.png">
-                                <img
-                                    src="https://cdn.pixabay.com/photo/2014/04/03/10/32/user-310807_1280.png">
-                                <img src="http://www.veryicon.com/icon/png/Avatar/Face%20Avatars/Male%20Face%20G1.png">
-                                <img
-                                    src="http://icons.iconarchive.com/icons/hopstarter/face-avatars/256/Female-Face-FG-1-brunette-icon.png">
-                                <img src="http://png-3.findicons.com/files/icons/1072/face_avatars/300/c05.png">
-                                <img src="http://png-1.findicons.com/files/icons/1072/face_avatars/300/i04.png">
-                            </div>
+        <div class="person-image">
+            <form id="iconUpdate" asp-action="AddAvatar" asp-route-UserId="@Model.UserId" asp-controller="Home" method="POST">
+                <input asp-for="ImageUrl" type="hidden" id="iconval">
+            </form>
+            @if (@Model.ImageUrl == null)
+            {
+                <div class="icon-container">
+                    <div>Click to pick avatar</div><br />
+                    <div class="avatarList">
+                        <div class="mainImg"><img src="https://cdn.pixabay.com/photo/2017/11/10/04/47/user-2935373_1280.png"></div>
+                        <div id="divCircle">
+                            <div id="middleBubble"></div>
+                            <img src="https://img.icons8.com/wired/64/000000/cow.png"/>
+                            <img src="http://png-3.findicons.com/files/icons/1072/face_avatars/300/c05.png">
+                            <img
+                                src="https://cdn.pixabay.com/photo/2014/04/03/10/32/user-310807_1280.png">
+                            <img src="http://www.veryicon.com/icon/png/Avatar/Face%20Avatars/Male%20Face%20G1.png">
+                            <img
+                                src="http://icons.iconarchive.com/icons/hopstarter/face-avatars/256/Female-Face-FG-1-brunette-icon.png">
+                            <img src="http://png-3.findicons.com/files/icons/1072/face_avatars/300/c05.png">
+                            <img src="http://png-1.findicons.com/files/icons/1072/face_avatars/300/i04.png">
                         </div>
                     </div>
-                    
-                }else{
-                    <div class="icon-container">
-                        <div class="avatarList">
-                            <div class="mainImg"><img src="@Model.ImageUrl"></div>
-                            <div id="divCircle">
-                                <div id="middleBubble"></div>
-                                <img src="https://img.icons8.com/wired/64/000000/cow.png"/>
-                                <img src="https://img.icons8.com/color/48/000000/black-jaguar.png"/>
-                                <img
-                                    src="https://cdn.pixabay.com/photo/2017/01/31/21/23/avatar-2027365_1280.png">
-                                <img src="https://cdn.pixabay.com/photo/2020/04/09/19/19/cartoon-doctor-5022797_1280.jpg">
-                                <img
-                                    src="http://icons.iconarchive.com/icons/hopstarter/face-avatars/256/Female-Face-FG-1-brunette-icon.png">
-                                <img src="http://png-3.findicons.com/files/icons/1072/face_avatars/300/c05.png">
-                                <img src="http://png-1.findicons.com/files/icons/1072/face_avatars/300/i04.png">
-                            </div>
+                </div>
+                
+            }else{
+                <div class="icon-container">
+                    <div class="avatarList">
+                        <div class="mainImg"><img src="@Model.ImageUrl"></div>
+                        <div id="divCircle">
+                            <div id="middleBubble"></div>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10133-child-dark-skin-tone-icon.png"/>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10145-girl-dark-skin-tone-icon.png"/>
+                            <img
+                                src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10142-girl-medium-light-skin-tone-icon.png">
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10132-child-medium-dark-skin-tone-icon.png">
+                            <img
+                                src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10141-girl-light-skin-tone-icon.png">
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10130-child-medium-light-skin-tone-icon.png">
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10129-child-light-skin-tone-icon.png">
                         </div>
-                    </div>                    
-                }
-            </div>
-
+                    </div>
+                </div>
+            }
         </div>
         <div class="person-info-text">
             <p><span class="bold">Name: </span>@Model.FirstName @Model.LastName</p>

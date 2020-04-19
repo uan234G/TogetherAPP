@@ -176,9 +176,19 @@ form{
     color: cornflowerblue;
     text-decoration: underline;
 }
+#helper-details{
+    display: flex;
+    justify-content: space-between;
+}
 #helper-details .person-image{
-    height: 45vh;
-    overflow-y: scroll;
+    /* height: 45vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+#helper-details .person-info-text{
+    width: 83%;
 }
 #helper-details,
 .accepted-container{
