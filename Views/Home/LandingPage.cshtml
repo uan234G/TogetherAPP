@@ -17,7 +17,7 @@
             document.getElementById('percent').innerHTML = ((Number(deaths) / Number(confirmedCases)) * 100).toLocaleString("en", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + "%";
         })
         .catch(function () {
-            console.log("error");
+            @* console.log("error"); *@
         })
         setTimeout(getCovidStats, 86400000) // update every 24 hours
     }
