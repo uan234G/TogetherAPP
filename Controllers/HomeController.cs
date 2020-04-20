@@ -213,13 +213,6 @@ namespace finalGSA.Controllers
             return View("RequestForm");
         }
 
-        [HttpGet("together/logout")]
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Clear();
-            return View("LandingPage");
-        }
-
         [HttpPost("/complete/request/{reqId}")]
         public IActionResult CompleteReq(int reqId)
         {
@@ -262,8 +255,8 @@ namespace finalGSA.Controllers
         }
 
         // adding avatar
-        [HttpPost("avatar/{UserId}")]
-        public IActionResult AddAvatar(string imageurl, int UserId)
+        [HttpPost("helper-avatar/{UserId}")]
+        public IActionResult HelperAvatar(string imageurl, int UserId)
         {
             if (ModelState.IsValid)
             {
@@ -274,6 +267,27 @@ namespace finalGSA.Controllers
             }
             return View("HelperDetails");
         }
+        [HttpPost("avatar/{UserId}")]
+        public IActionResult NeedHelpAvatar(string imageurl, int UserId)
+        {
+            if (ModelState.IsValid)
+            {
+                User CurrentUser = dbContext.Users.FirstOrDefault(w => w.UserId == UserId);
+                CurrentUser.ImageUrl = imageurl;
+                dbContext.SaveChanges();
+                return RedirectToAction("Detail", new { UserId = UserId });
+            }
+            return View("Detail");
+        }
+
+        [HttpGet("together/logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("LandingPage");
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
