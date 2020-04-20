@@ -26,7 +26,7 @@
 
     <div id="helper-details">
         <div class="person-image">
-            <form id="iconUpdate" asp-action="AddAvatar" asp-route-UserId="@Model.UserId" asp-controller="Home" method="POST">
+            <form id="iconUpdate" asp-action="HelperAvatar" asp-route-UserId="@Model.UserId" asp-controller="Home" method="POST">
                 <input asp-for="ImageUrl" type="hidden" id="iconval">
             </form>
             @if (@Model.ImageUrl == null)

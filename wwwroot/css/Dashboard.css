@@ -81,9 +81,6 @@ table .view-btn:active{
     height: 45vh;
     margin-top: 2rem;
 }
-.person-info-container{
-    width: 100%;
-}
 #detail-content{
     width: 45%;
 }
@@ -176,13 +173,15 @@ form{
     color: cornflowerblue;
     text-decoration: underline;
 }
-#helper-details{
+#helper-details,
+#needHelp-details{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#helper-details .person-image{
+#helper-details .person-image,
+#needHelp-details .person-image{
     height: auto;
     width: 100%;
     display: flex;
@@ -191,7 +190,8 @@ form{
     align-items: center;
     position: relative;
 }
-#helper-details .person-image .mainImg{
+#helper-details .person-image .mainImg,
+#needHelp-details .person-image .mainImg{
     width: 150px;
     height: 150px;
     padding: 1rem;
@@ -199,22 +199,27 @@ form{
     background: #ff7759;
     margin-bottom: 12px;
 }
-#helper-details .person-image #select-btn{
+#helper-details .person-image #select-btn,
+#needHelp-details .person-image #select-btn{
     text-decoration: underline;
     font-size: 0.9rem;
     margin-bottom: 12px;
 }
-#helper-details .person-image #select-btn:hover{
+#helper-details .person-image #select-btn:hover,
+#needHelp-details .person-image #select-btn:hover{
     cursor: pointer;
 }
-#helper-details .person-image #select-btn:active{
+#helper-details .person-image #select-btn:active,
+#needHelp-details .person-image #select-btn:active{
     transform: scale(0.95);
 }
-#helper-details .person-image .nameOfUser{
+#helper-details .person-image .nameOfUser,
+#needHelp-details .person-image .nameOfUser{
     font-size: 1.25rem;
     margin-bottom: 1rem;
 }
-#helper-details .person-image #avatarList{
+#helper-details .person-image #avatarList,
+#needHelp-details .person-image #avatarList{
     transform: translateX(0);
     width: 150px;
     height: 200px;
@@ -228,27 +233,33 @@ form{
     background: #ddd;
     transition: all 0.5s ease-in-out;
 }
-#helper-details .person-image #avatarList.expand{
+#helper-details .person-image #avatarList.expand,
+#needHelp-details .person-image #avatarList.expand{
     transform: translateX(200px);
     opacity: 1;
     z-index: 2;
     transition: all 0.5s ease-in;
 }
-#helper-details .person-image #avatarList ul li{
+#helper-details .person-image #avatarList ul li,
+#needHelp-details .person-image #avatarList ul li{
     margin-bottom: 10px;
 }
-#helper-details .person-image #avatarList ul li img{
+#helper-details .person-image #avatarList ul li img,
+#needHelp-details .person-image #avatarList ul li img{
     width: 70%;
     height: 70%;
     margin: 0 auto;
 }
-#helper-details .person-image #avatarList ul li:hover{
+#helper-details .person-image #avatarList ul li:hover,
+#needHelp-details .person-image #avatarList ul li:hover{
     cursor: pointer;
 }
-#helper-details .person-info-text{
+#helper-details .person-info-text,
+#needHelp-details .person-info-text{
     text-align: center;
 }
-#helper-details .person-info-text ul li{
+#helper-details .person-info-text ul li,
+#needHelp-details .person-info-text ul li{
     display: inline-block;
     margin-right: 10px;
 }

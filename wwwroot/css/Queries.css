@@ -327,10 +327,12 @@
         width: 100%;
         padding: 1.5rem;
     }
-    #helper-details .person-image #avatarList.expand{
+    #helper-details .person-image #avatarList.expand,
+    #needHelp-details .person-image #avatarList.expand{
         transform: translateY(200px);
     }
-    #helper-details .person-info-text ul li{
+    #helper-details .person-info-text ul li,
+    #needHelp-details .person-info-text ul li{
         display: block;
         margin-bottom: 5px;
     }
