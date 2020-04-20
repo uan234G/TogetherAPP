@@ -21,7 +21,6 @@
   height: 295px;
   top: -90%;
   left: -90%;
-  z-index: 2;
 }
 #divCircle img{
   position: absolute;
@@ -73,6 +72,9 @@
   height:60px;
   background:#ff7759;
   border-radius:60px;
+}
+.avatarList:hover{
+  cursor: pointer;
 }
 .avatarList.expand .mainImg img {
   /* border-color:rgba(0,0,0,0.5); */
