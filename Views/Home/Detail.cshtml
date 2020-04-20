@@ -1,5 +1,4 @@
 @model User
-
 @section Dashboard{
     <link rel="stylesheet" href="~/css/Dashboard.css">
     <link rel="stylesheet" href="~/css/Queries.css">
@@ -88,7 +87,8 @@
                         <p>
                             <span class="bold">
                                 Completed by: 
-                                <a class="orange" asp-action="HelperDetails" asp-route-UserId="@ViewBag.CompletedBy.UserId">@ViewBag.CompletedBy.FirstName @ViewBag.CompletedBy.LastName</a>
+                                @* <a class="orange" asp-action="HelperDetails" asp-route-UserId="@ViewBag.CompletedBy.UserId">@ViewBag.CompletedBy.FirstName @ViewBag.CompletedBy.LastName</a> *@
+                                <a class="orange" asp-action="HelperDetails" asp-route-UserId="@creq.PickedUpByID">@creq.CompletedBy</a>
                             </span>
                         </p>
                     </div>
