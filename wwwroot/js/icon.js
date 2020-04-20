@@ -7,7 +7,6 @@ window.onload = function () {
     selectBtn.addEventListener('click', list);
 
     function list(){
-        console.log('clicked');
         avatarList.classList.toggle('expand');
     }
 

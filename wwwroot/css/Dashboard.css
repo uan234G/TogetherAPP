@@ -201,6 +201,9 @@ form{
     text-decoration: underline;
     margin-bottom: 12px;
 }
+#helper-details .person-image #select-btn:hover{
+    cursor: pointer;
+}
 #helper-details .person-image #avatarList{
     transform: translateX(0);
     width: 150px;
@@ -213,6 +216,16 @@ form{
     z-index: -2;
     background: #ddd;
     transition: all 0.5s ease-in-out;
+}
+#helper-details .person-image #avatarList ul li{
+    margin-bottom: 10px;
+}
+#helper-details .person-image #avatarList ul li img{
+    width: 70%;
+    height: 70%;
+}
+#helper-details .person-image #avatarList ul li:hover{
+    cursor: pointer;
 }
 #helper-details .person-image #avatarList.expand{
     transform: translateX(200px);
