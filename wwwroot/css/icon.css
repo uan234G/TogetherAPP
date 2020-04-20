@@ -7,11 +7,11 @@
 #divCircle {
   /* width: 195px;
   height: 195px; */
-  border-radius:200px;
-  position: relative;
   /* overflow:hidden; */
   /* top:-10px;
   left:-10px; */
+  border-radius:200px;
+  position: relative;
   opacity:0;
   margin: -60px;
   -webkit-transition:opacity 0s 0s;
@@ -27,7 +27,7 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  background:orange;
+  background:#ff7759;
   border-radius:60px;
   /* border:2px #000 solid; */
   -webkit-transition:all 0.4s;
@@ -71,7 +71,7 @@
   /* border:1px black solid; */
   width:60px;
   height:60px;
-  background:orange;
+  background:#ff7759;
   border-radius:60px;
 }
 .avatarList.expand .mainImg img {

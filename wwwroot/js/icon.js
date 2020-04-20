@@ -1,8 +1,6 @@
 const iconUpdate = document.getElementById('iconUpdate');
 const iconvalue = document.getElementById('iconval');
 
-
-
 window.onload = function () {
 
     //YOUR JQUERY CODE
