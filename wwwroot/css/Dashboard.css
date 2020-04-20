@@ -94,7 +94,7 @@ table .view-btn:active{
 }
 #detail-main p span,
 #helperDetails-main p span{
-    padding-right: 7px;
+    padding-right: 5px;
     font-size: 0.8rem;
 }
 #detail-main p:last-of-type,
@@ -178,11 +178,13 @@ form{
 }
 #helper-details{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 #helper-details .person-image{
     height: auto;
-    width: 30%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -199,10 +201,18 @@ form{
 }
 #helper-details .person-image #select-btn{
     text-decoration: underline;
+    font-size: 0.9rem;
     margin-bottom: 12px;
 }
 #helper-details .person-image #select-btn:hover{
     cursor: pointer;
+}
+#helper-details .person-image #select-btn:active{
+    transform: scale(0.95);
+}
+#helper-details .person-image .nameOfUser{
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
 }
 #helper-details .person-image #avatarList{
     transform: translateX(0);
@@ -212,20 +222,11 @@ form{
     opacity: 0.5;
     position: absolute;
     top: 0;
-    left: 25%;
+    left: 50%;
+    margin-left: -75px;
     z-index: -2;
     background: #ddd;
     transition: all 0.5s ease-in-out;
-}
-#helper-details .person-image #avatarList ul li{
-    margin-bottom: 10px;
-}
-#helper-details .person-image #avatarList ul li img{
-    width: 70%;
-    height: 70%;
-}
-#helper-details .person-image #avatarList ul li:hover{
-    cursor: pointer;
 }
 #helper-details .person-image #avatarList.expand{
     transform: translateX(200px);
@@ -233,8 +234,23 @@ form{
     z-index: 2;
     transition: all 0.5s ease-in;
 }
+#helper-details .person-image #avatarList ul li{
+    margin-bottom: 10px;
+}
+#helper-details .person-image #avatarList ul li img{
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+}
+#helper-details .person-image #avatarList ul li:hover{
+    cursor: pointer;
+}
 #helper-details .person-info-text{
-    width: 65%;
+    text-align: center;
+}
+#helper-details .person-info-text ul li{
+    display: inline-block;
+    margin-right: 10px;
 }
 #helper-details,
 .accepted-container{

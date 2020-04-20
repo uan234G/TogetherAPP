@@ -24,7 +24,7 @@
 
 <section id="helperDetails-main" class="wrapper">
 
-    <div id="helper-details" class="person-info-container">
+    <div id="helper-details">
         <div class="person-image">
             <form id="iconUpdate" asp-action="AddAvatar" asp-route-UserId="@Model.UserId" asp-controller="Home" method="POST">
                 <input asp-for="ImageUrl" type="hidden" id="iconval">
@@ -34,7 +34,7 @@
                 <div class="mainImg">
                     <img src="~/images/default.png"/>
                 </div>
-                <div id="select-btn">Select your avatar</div>
+                <div id="select-btn">Select avatar</div>
                 <div id="avatarList">
                     <ul>
                         <li>
@@ -105,7 +105,8 @@
                 <div class="mainImg">
                     <img class="pic" src="@Model.ImageUrl">
                 </div>
-                <div id="select-btn">Edit your avatar</div>
+                <div id="select-btn">Edit avatar</div>
+                <h4 class="nameOfUser">@Model.FirstName @Model.LastName</h4>
                 <div id="avatarList">
                     <ul>
                         <li>
@@ -173,11 +174,20 @@
             }
         </div>
         <div class="person-info-text">
-            <p><span class="bold">Name: </span>@Model.FirstName @Model.LastName</p>
-            <p><span class="bold">Email: </span>@Model.Email</p>
-            <p><span class="bold">Phone: </span>@Model.PhoneNumber</p>
-            <p><span class="bold">Venmo ID: </span>@Model.VenmoId</p>
-            <p><span class="bold">ZipCode: </span>@Model.ZipCode</p>
+            <ul>
+                <li>
+                    <p><span class="bold">Email: </span>@Model.Email</p>
+                </li>
+                <li>
+                    <p><span class="bold">Phone: </span>@Model.PhoneNumber</p>
+                </li>
+                <li>
+                    <p><span class="bold">Venmo ID: </span>@Model.VenmoId</p>
+                </li>
+                <li>
+                    <p><span class="bold">ZipCode: </span>@Model.ZipCode</p>
+                </li>
+            </ul>
         </div>
 
     </div>
