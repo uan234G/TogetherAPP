@@ -3,7 +3,7 @@
 @section Dashboard{
     <link rel="stylesheet" href="~/css/Dashboard.css">
     <link rel="stylesheet" href="~/css/Queries.css">
-    <link rel="stylesheet" href="~/css/icon.css">
+    @* <link rel="stylesheet" href="~/css/icon.css"> *@
 }
 
 
@@ -32,47 +32,59 @@
             </form>
             @if (@Model.ImageUrl == null)
             {
-                <div class="icon-container">
-                    <div>Click to pick avatar</div><br />
-                    <div class="avatarList">
-                        <div class="mainImg">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10133-child-dark-skin-tone-icon.png"/>
-                        </div>
-                        <div id="divCircle">
-                            <div id="middleBubble"></div>
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10133-child-dark-skin-tone-icon.png"/>
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10145-girl-dark-skin-tone-icon.png"/>
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10142-girl-medium-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10132-child-medium-dark-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10141-girl-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10130-child-medium-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10129-child-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10173-old-man-medium-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10171-old-man-light-skin-tone-icon.png">
-                        </div>
-                    </div>
+                <div class="mainImg">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10133-child-dark-skin-tone-icon.png"/>
+                </div>
+                <div id="select-btn">Select your avatar</div>
+                <div id="avatarList">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10133-child-dark-skin-tone-icon.png"/>
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10145-girl-dark-skin-tone-icon.png"/>
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10142-girl-medium-light-skin-tone-icon.png">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10132-child-medium-dark-skin-tone-icon.png">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10141-girl-light-skin-tone-icon.png">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10130-child-medium-light-skin-tone-icon.png">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10129-child-light-skin-tone-icon.png">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10173-old-man-medium-skin-tone-icon.png">
+                    <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10171-old-man-light-skin-tone-icon.png">
                 </div>
 
-            }else{
-                <div class="icon-container">
-                    @* <div>Click to pick avatar</div><br /> *@
-                    <div class="avatarList">
-                        <div class="mainImg">
-                            <img src="@Model.ImageUrl">
-                        </div>
-                        <div id="divCircle">
-                            <div id="middleBubble"></div>
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10133-child-dark-skin-tone-icon.png"/>
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10145-girl-dark-skin-tone-icon.png"/>
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10142-girl-medium-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10132-child-medium-dark-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10141-girl-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10130-child-medium-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10129-child-light-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10173-old-man-medium-skin-tone-icon.png">
-                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10171-old-man-light-skin-tone-icon.png">
-                        </div>
-                    </div>
+            }
+            else
+            {
+                <div class="mainImg">
+                    <img class="pic" src="@Model.ImageUrl">
+                </div>
+                <div id="select-btn">Edit your avatar</div>
+                <div id="avatarList">
+                    <ul>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10171-old-man-light-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10133-child-dark-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10145-girl-dark-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10142-girl-medium-light-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10132-child-medium-dark-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10141-girl-light-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/128/10130-child-medium-light-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10129-child-light-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                        <li>
+                            <img src="http://icons.iconarchive.com/icons/google/noto-emoji-people-face/256/10173-old-man-medium-skin-tone-icon.png" class="pic avatar-option"/>
+                        </li>
+                    </ul>
                 </div>
             }
         </div>
