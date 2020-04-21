@@ -1,6 +1,5 @@
 window.onload = function () {
     const iconUpdate = document.getElementById('iconUpdate');
-    const iconvalue = document.getElementById('iconval');
     const selectBtn = document.getElementById('select-btn');
     const avatarList = document.getElementById('avatarList');
 
@@ -9,7 +8,6 @@ window.onload = function () {
     function list(){
         avatarList.classList.toggle('expand');
     }
-
     $('#divCircle img').click(function () {
         var theSrc = $(this).attr('src');
         $('.mainImg img').attr('src', theSrc);
