@@ -1,6 +1,6 @@
 /* NAVIGATION */
 .mobile-nav,
-#open-nav{
+#nav-btn{
     display: none;
 }
 .landing-nav .logo h1{
@@ -8,8 +8,8 @@
 }
 .landing-nav .nav-links ul li a{
     color: #fff;
-    border: 2px solid transparent;
-    padding: 2px 20px;
+    border-bottom: 2px solid transparent;
+    padding: 1px 3px;
     transition: all 0.5s ease-out;
 }
 .landing-nav .nav-links ul li a:hover{
@@ -19,6 +19,7 @@
 .landing-nav .nav-links #register-btn{
     background-color: #fff;
     border-color: #fff;
+    padding: 3px 12px;
     color: #243f51;
     transition: all 0.5s ease-out;
 }

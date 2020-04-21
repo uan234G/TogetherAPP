@@ -88,7 +88,6 @@ namespace finalGSA.Controllers
             {
                 return RedirectToAction("LandingPage");
             }
-            // User DetailsFor = dbContext.Users.FirstOrDefault(q => q.UserId == Uid);
             User DetailsFor = dbContext.Users.Include(a => a.RequestsCreated).FirstOrDefault(q => q.UserId == Uid);
             User CurrentUser = dbContext.Users.FirstOrDefault(q => q.UserId == UserSession);
             ViewBag.UserId = CurrentUser.UserId;
@@ -96,9 +95,11 @@ namespace finalGSA.Controllers
             {
                 if (req.IsCompleted == true)
                 {
-                    ViewBag.CompletedBy = dbContext.Users.FirstOrDefault(q => q.UserId == req.PickedUpByID);
+                    User CompletedBy = dbContext.Users.FirstOrDefault(l => l.UserId == req.PickedUpByID);
+                    req.CompletedBy = CompletedBy.FirstName + " " + CompletedBy.LastName;
                 }
             }
+            dbContext.SaveChanges();
             return View(DetailsFor);
         }
 
@@ -212,13 +213,6 @@ namespace finalGSA.Controllers
             return View("RequestForm");
         }
 
-        [HttpGet("together/logout")]
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Clear();
-            return View("LandingPage");
-        }
-
         [HttpPost("/complete/request/{reqId}")]
         public IActionResult CompleteReq(int reqId)
         {
@@ -261,8 +255,8 @@ namespace finalGSA.Controllers
         }
 
         // adding avatar
-        [HttpPost("avatar/{UserId}")]
-        public IActionResult AddAvatar(string imageurl, int UserId)
+        [HttpPost("helper-avatar/{UserId}")]
+        public IActionResult HelperAvatar(string imageurl, int UserId)
         {
             if (ModelState.IsValid)
             {
@@ -273,6 +267,27 @@ namespace finalGSA.Controllers
             }
             return View("HelperDetails");
         }
+        [HttpPost("avatar/{UserId}")]
+        public IActionResult NeedHelpAvatar(string imageurl, int UserId)
+        {
+            if (ModelState.IsValid)
+            {
+                User CurrentUser = dbContext.Users.FirstOrDefault(w => w.UserId == UserId);
+                CurrentUser.ImageUrl = imageurl;
+                dbContext.SaveChanges();
+                return RedirectToAction("Detail", new { Uid = UserId });
+            }
+            return View("Detail");
+        }
+
+        [HttpGet("together/logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return View("LandingPage");
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

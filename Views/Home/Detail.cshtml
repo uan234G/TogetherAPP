@@ -1,5 +1,4 @@
 @model User
-
 @section Dashboard{
     <link rel="stylesheet" href="~/css/Dashboard.css">
     <link rel="stylesheet" href="~/css/Queries.css">
@@ -26,16 +25,179 @@
 
 <section id="detail-main" class="wrapper">
     <div class="leftCol">
-        <div class="person-info-container">
+        <div id="needHelp-details" class="person-info-container">
 
-            <div class="person-info-text">
-            <p><span class="bold">Name: </span>@Model.FirstName @Model.LastName</p>
-            <p><span class="bold">Email: </span><a href="mailto:@Model.Email" class="orange">@Model.Email</a></p>
-            <p><span class="bold">Phone: </span><a href="tel:@Model.PhoneNumber" class="orange">@Model.PhoneNumber</a></p>
-            <p><span class="bold">Venmo ID: </span>@Model.VenmoId</p>
-            <p><span class="bold">Zipcode: </span>@Model.ZipCode</p>
+            <div class="person-image">
+                <form id="iconUpdate" asp-action="NeedHelpAvatar" asp-route-UserId="@Model.UserId" asp-controller="Home" method="POST">
+                    <input asp-for="ImageUrl" type="hidden" id="iconval">
+                </form>
+                @if (@Model.ImageUrl == null)
+                {
+                    <div class="mainImg">
+                        <img src="~/images/default.png" class="pic">
+                    </div>
+                    if (@ViewBag.UserId == @Model.UserId)
+                    {
+                        <div id="select-btn">Select avatar</div>
+                    }
+                    <div id="avatarList">
+                        <ul>
+                            <li>
+                                <img src="~/images/10153.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10154.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10155.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10156.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10157.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10159.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10160.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10161.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10162.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10163.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10165.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10166.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10167.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10168.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10169.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10171.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10172.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10173.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10174.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10175.png" class="pic">
+                            </li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div class="mainImg">
+                        <img class="pic" src="@Model.ImageUrl">
+                    </div>
+                    if (@ViewBag.UserId == @Model.UserId)
+                    {
+                        <div id="select-btn">Edit avatar</div>
+                    }
+                    <h4 class="nameOfUser">@Model.FirstName @Model.LastName</h4>
+                    <div id="avatarList">
+                        <ul>
+                            <li>
+                                <img src="~/images/10153.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10154.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10155.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10156.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10157.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10159.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10160.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10161.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10162.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10163.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10165.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10166.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10167.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10168.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10169.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10171.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10172.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10173.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10174.png" class="pic">
+                            </li>
+                            <li>
+                                <img src="~/images/10175.png" class="pic">
+                            </li>
+                        </ul>
+                    </div>
+                }
             </div>
 
+            <div class="person-info-text">
+                <ul>
+                    <li>
+                        <p><span class="bold">Email: </span><a href="mailto:@Model.Email" class="orange">@Model.Email</a></p>
+                    </li>
+                    <li>
+                        <p><span class="bold">Phone: </span><a href="tel:@Model.PhoneNumber" class="orange">@Model.PhoneNumber</a></p>
+                    </li>
+                    <li>
+                        <p><span class="bold">Venmo ID: </span>@Model.VenmoId</p>
+                    </li>
+                    <li>
+                        <p><span class="bold">Zipcode: </span>@Model.ZipCode</p>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div id="map"></div>
     </div>
@@ -88,7 +250,8 @@
                         <p>
                             <span class="bold">
                                 Completed by: 
-                                <a class="orange" asp-action="HelperDetails" asp-route-UserId="@ViewBag.CompletedBy.UserId">@ViewBag.CompletedBy.FirstName @ViewBag.CompletedBy.LastName</a>
+                                @* <a class="orange" asp-action="HelperDetails" asp-route-UserId="@ViewBag.CompletedBy.UserId">@ViewBag.CompletedBy.FirstName @ViewBag.CompletedBy.LastName</a> *@
+                                <a class="orange" asp-action="HelperDetails" asp-route-UserId="@creq.PickedUpByID">@creq.CompletedBy</a>
                             </span>
                         </p>
                     </div>
