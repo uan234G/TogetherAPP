@@ -34,7 +34,10 @@
                 <div class="mainImg">
                     <img src="~/images/default.png" class="pic">
                 </div>
-                <div id="select-btn">Select avatar</div>
+                @if (@ViewBag.CurrentUser.UserId == @Model.UserId)
+                {
+                    <div id="select-btn">Select avatar</div>
+                }
                 <div id="avatarList">
                     <ul>
                         <li>
@@ -105,7 +108,10 @@
                 <div class="mainImg">
                     <img class="pic" src="@Model.ImageUrl">
                 </div>
-                <div id="select-btn">Edit avatar</div>
+                if (@ViewBag.CurrentUser.UserId == @Model.UserId)
+                {
+                    <div id="select-btn">Edit avatar</div>
+                }
                 <h4 class="nameOfUser">@Model.FirstName @Model.LastName</h4>
                 <div id="avatarList">
                     <ul>
