@@ -275,7 +275,7 @@ namespace finalGSA.Controllers
                 User CurrentUser = dbContext.Users.FirstOrDefault(w => w.UserId == UserId);
                 CurrentUser.ImageUrl = imageurl;
                 dbContext.SaveChanges();
-                return RedirectToAction("Detail", new { UserId = UserId });
+                return RedirectToAction("Detail", new { Uid = UserId });
             }
             return View("Detail");
         }
