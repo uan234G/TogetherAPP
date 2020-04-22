@@ -37,25 +37,25 @@ namespace finalGSA.Controllers
             return View();
         }
 
-        [HttpGet("together/select-role")]
+        [HttpGet("strive_together/select-role")]
         public IActionResult SelectRole()
         {
             return View();
         }
 
-        [HttpGet("together/helper")]
+        [HttpGet("strive_together/helper")]
         public IActionResult HelperRegView()
         {
             return View();
         }
 
-        [HttpGet("together/needofhelp")]
+        [HttpGet("strive_together/needofhelp")]
         public IActionResult HelpRegView()
         {
             return View();
         }
 
-        [HttpGet("together/dashboard")]
+        [HttpGet("strive_together/dashboard")]
         public IActionResult Dashboard()
         {
             if (UserSession == null)
@@ -82,7 +82,7 @@ namespace finalGSA.Controllers
             return View(NearbyRequests);
         }
 
-        [HttpGet("View/{Uid}/Details")]
+        [HttpGet("strive_together/view/{Uid}/details")]
         public IActionResult Detail(int Uid)
         {
             if (UserSession == null)
@@ -104,7 +104,7 @@ namespace finalGSA.Controllers
             return View(DetailsFor);
         }
 
-        [HttpGet("Detils/{UserId}/helper")]
+        [HttpGet("strive_together/detils/{UserId}/helper")]
         public IActionResult HelperDetails(int UserId)
         {
             if (UserSession == null)
@@ -134,7 +134,7 @@ namespace finalGSA.Controllers
             return View();
         }
 
-        [HttpPost("together/register/help-user")]
+        [HttpPost("strive_together/register/help-user")]
         public IActionResult HelpReg(User HelpUser)
         {
             if (ModelState.IsValid)
@@ -155,7 +155,7 @@ namespace finalGSA.Controllers
             return View("HelpRegView");
         }
 
-        [HttpPost("together/register/helper-user")]
+        [HttpPost("strive_together/register/helper-user")]
         public IActionResult HelperReg(User HelperUser)
         {
             if (ModelState.IsValid)
@@ -176,7 +176,7 @@ namespace finalGSA.Controllers
             return View("HelperRegView");
         }
 
-        [HttpPost("together/login/user")]
+        [HttpPost("strive_together/login/user")]
         public IActionResult LoginUser(Login currentUser)
         {
             if (ModelState.IsValid)
@@ -200,7 +200,7 @@ namespace finalGSA.Controllers
             return View("Login");
         }
 
-        [HttpPost("together/request-help")]
+        [HttpPost("strive_together/request-help")]
         public IActionResult submitRequest(Request newRequest)
         {
             if (newRequest.Notes != null && newRequest.Items != null && newRequest.Urgency != null)
@@ -214,7 +214,7 @@ namespace finalGSA.Controllers
             return View("RequestForm");
         }
 
-        [HttpPost("/complete/request/{reqId}")]
+        [HttpPost("strive_together/complete/request/{reqId}")]
         public IActionResult CompleteReq(int reqId)
         {
             if (ModelState.IsValid)
@@ -240,7 +240,7 @@ namespace finalGSA.Controllers
             return RedirectToAction("Detail", new { Uid = RequestToDelete.Creator.UserId });
         }
 
-        [HttpPost("/cancel/request/{reqId}")]
+        [HttpPost("strive_together/cancel/request/{reqId}")]
         public IActionResult CancelReq(int reqId)
         {
             if (ModelState.IsValid)
@@ -281,7 +281,7 @@ namespace finalGSA.Controllers
             return View("Detail");
         }
 
-        [HttpGet("together/logout")]
+        [HttpGet("strive_together/logout")]
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
