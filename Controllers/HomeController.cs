@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace finalGSA.Controllers
 {
+    // Hello Daesung
     public class HomeController : Controller
     {
         private MyContext dbContext;
