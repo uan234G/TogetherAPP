@@ -86,11 +86,14 @@
     #nav-btn{
         display: block;
     }
+    #landing-header h1{
+        font-size: 1.85rem;
+    }
     .landing-nav .nav-links{
         display: none;
     }
     #nav-btn{
-        padding: 1rem 1rem;
+        padding: 1rem 0.5rem;
     }
     #nav-btn:hover{
         cursor: pointer;
@@ -134,14 +137,14 @@
         transition: transform 0.2s ease;
     }
     .mobile-nav{
-        width: 180px;
+        width: 150px;
         right: 0;
         height: 40vh;
         position: absolute;
         z-index: 3;
         opacity: 0.9;
         border-bottom-left-radius: 10px;
-        transform: translate(180px);
+        transform: translate(150px);
         background-color: #243f51;
         display: flex;
         flex-direction: column;
@@ -166,6 +169,10 @@
     /* Banner */
     .banner-text h1{
         width: 100%;
+        font-size: 2.5rem;
+    }
+    .banner-text p{
+        font-size: 1rem;
     }
     #banner #leftCol{
         top: 33%;
