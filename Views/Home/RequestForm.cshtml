@@ -33,9 +33,9 @@
 
             <label asp-for="Urgency">
                 When do you need this by? (mm/dd/yyyy hh:mm)
-                <span asp-validation-for="Urgency" class="red"></span>
             </label>
-            <input asp-for="Urgency" placeholder="mm/dd/yyyy hh:mm am/pm">
+            <span asp-validation-for="Urgency" class="red"></span>
+            <input asp-for="Urgency" placeholder="01/01/2020 01:30pm">
 
             <label asp-for="Notes">Notes:</label>
             <textarea asp-for="Notes" placeholder="Hand soap, toilet paper, 1 gl. of milk etc..."></textarea>

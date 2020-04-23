@@ -159,6 +159,9 @@
 
 @media screen and (max-width: 720px){
     /* Universal Styles */
+    header .logo h1{
+        font-size: 1.85rem;
+    }
     html{
         font-size: 14px;
     }
@@ -263,7 +266,7 @@
         transition: transform 0.2s ease;
     }
     .mobile-dashNav{
-        width: 200px;
+        width: 175px;
         right: 0;
         top: 0;
         height: 40vh;
@@ -271,7 +274,7 @@
         z-index: 3;
         opacity: 0.9;
         border-bottom-left-radius: 10px;
-        transform: translate(200px);
+        transform: translate(175px);
         background-color: #243f51;
         display: flex;
         flex-direction: column;
