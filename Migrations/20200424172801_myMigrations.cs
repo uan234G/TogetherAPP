@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace finalGSA.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class myMigrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,6 +40,7 @@ namespace finalGSA.Migrations
                     Notes = table.Column<string>(nullable: true),
                     IsCompleted = table.Column<bool>(nullable: false),
                     PickedUpByID = table.Column<int>(nullable: false),
+                    CompletedBy = table.Column<string>(nullable: true),
                     UserID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

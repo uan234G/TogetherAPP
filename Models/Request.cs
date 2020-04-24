@@ -14,6 +14,8 @@ namespace finalGSA.Models
         public string Items { get; set; }
         // user can write down everything they need in textbox
         [Required(ErrorMessage = "Please enter a date and time")]
+
+        [FutureDate]
         public DateTime Urgency { get; set; }
         public string Notes { get; set; }
         public bool IsCompleted { get; set; }
