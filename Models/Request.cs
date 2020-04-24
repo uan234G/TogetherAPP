@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace finalGSA.Models
 {
@@ -15,8 +15,9 @@ namespace finalGSA.Models
         // user can write down everything they need in textbox
         [Required(ErrorMessage = "Please enter a date and time")]
 
-        [FutureDate]
+        [FutureDateAttribute]
         public DateTime Urgency { get; set; }
+
         public string Notes { get; set; }
         public bool IsCompleted { get; set; }
         // default val = false;

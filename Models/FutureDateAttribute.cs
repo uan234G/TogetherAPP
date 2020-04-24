@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace finalGSA.Models
 {
-    public class FutureDate : ValidationAttribute
+    public class FutureDateAttribute : ValidationAttribute
     {
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
