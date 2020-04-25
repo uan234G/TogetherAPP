@@ -36,7 +36,7 @@
                     <div class="mainImg">
                         <img src="~/images/default.png" class="pic">
                     </div>
-                    if (@ViewBag.UserId == @Model.UserId)
+                    if (@ViewBag.CurrentUser.UserId == @Model.UserId)
                     {
                         <div id="select-btn">Select avatar</div>
                     }
@@ -110,7 +110,7 @@
                     <div class="mainImg">
                         <img class="pic" src="@Model.ImageUrl">
                     </div>
-                    if (@ViewBag.UserId == @Model.UserId)
+                    if (@ViewBag.CurrentUser.UserId == @Model.UserId)
                     {
                         <div id="select-btn">Edit avatar</div>
                     }
@@ -219,13 +219,18 @@
                         <p><span class="bold">Notes: </span>@req.Notes</p>
                     </div>
                     <div>
-                        @if(req.Creator.UserId != @ViewBag.UserId)
+                        @if(req.Creator.UserId != @ViewBag.CurrentUser.UserId)
                         {
-                        <form asp-action="CompleteReq" asp-route-reqId="@req.RequestId" asp-controller="Home" method="POST">
-                            <input type="submit" class="accept-btn" value="Accept Request">
-                        </form>
+                            if (@ViewBag.CurrentUser.Status == false)
+                            {
+                            <form asp-action="CompleteReq" asp-route-reqId="@req.RequestId" asp-controller="Home" method="POST">
+                                <input type="submit" class="accept-btn" value="Accept Request">
+                            </form>
+                            }else{
+                                <button disabled>Accept Request</button>
+                            }
                         }
-                        else if (req.Creator.UserId == @ViewBag.UserId)
+                        @if (req.Creator.UserId == @ViewBag.CurrentUser.UserId)
                         {
                             <a class="delete-btn" asp-action="Delete" asp-route-requestId="@req.RequestId">Delete</a>
                         }
@@ -250,7 +255,6 @@
                         <p>
                             <span class="bold">
                                 Completed by: 
-                                @* <a class="orange" asp-action="HelperDetails" asp-route-UserId="@ViewBag.CompletedBy.UserId">@ViewBag.CompletedBy.FirstName @ViewBag.CompletedBy.LastName</a> *@
                                 <a class="orange" asp-action="HelperDetails" asp-route-UserId="@creq.PickedUpByID">@creq.CompletedBy</a>
                             </span>
                         </p>

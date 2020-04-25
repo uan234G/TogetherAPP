@@ -91,7 +91,7 @@ namespace finalGSA.Controllers
             }
             User DetailsFor = dbContext.Users.Include(a => a.RequestsCreated).FirstOrDefault(q => q.UserId == Uid);
             User CurrentUser = dbContext.Users.FirstOrDefault(q => q.UserId == UserSession);
-            ViewBag.UserId = CurrentUser.UserId;
+            ViewBag.CurrentUser = CurrentUser;
             foreach (var req in DetailsFor.RequestsCreated)
             {
                 if (req.IsCompleted == true)
