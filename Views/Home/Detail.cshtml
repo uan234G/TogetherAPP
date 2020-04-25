@@ -227,7 +227,7 @@
                                 <input type="submit" class="accept-btn" value="Accept Request">
                             </form>
                             }else{
-                                <button disabled>Accept Request</button>
+                                <button id="disabled-btn" disabled>Accept Request</button>
                             }
                         }
                         @if (req.Creator.UserId == @ViewBag.CurrentUser.UserId)

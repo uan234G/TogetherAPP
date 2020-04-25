@@ -65,6 +65,9 @@ table .view-btn:active{
 }
 
 /* DETAILS.CSHTML STYLES */
+#disabled-btn{
+    visibility: hidden;
+}
 #detail-main{
     margin-top: 8rem;
     margin-bottom: 5rem;
