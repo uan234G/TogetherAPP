@@ -31,7 +31,7 @@ namespace finalGSA.Controllers
             return View();
         }
 
-        [HttpGet("together/login")]
+        [HttpGet("strive_together/login")]
         public IActionResult Login()
         {
             return View();
@@ -203,7 +203,7 @@ namespace finalGSA.Controllers
         [HttpPost("strive_together/request-help")]
         public IActionResult submitRequest(Request newRequest)
         {
-            if (newRequest.Items != null && newRequest.Urgency != null)
+            if (ModelState.IsValid)
             {
                 User userfromDb = dbContext.Users.FirstOrDefault(a => a.UserId == UserSession);
                 newRequest.UserID = userfromDb.UserId;
