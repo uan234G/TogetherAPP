@@ -1,6 +1,6 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace finalGSA.Models
 {
@@ -13,8 +13,12 @@ namespace finalGSA.Models
         [Required(ErrorMessage = "List what you need")]
         public string Items { get; set; }
         // user can write down everything they need in textbox
+
+        [FutureDate(ErrorMessage = "Can't be a past date")]
         [Required(ErrorMessage = "Please enter a date and time")]
+        [DataType(DataType.Date)]
         public DateTime Urgency { get; set; }
+
         public string Notes { get; set; }
         public bool IsCompleted { get; set; }
         // default val = false;

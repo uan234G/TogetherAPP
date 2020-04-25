@@ -30,11 +30,9 @@
             </label>
             <input asp-for="Items" placeholder="House supplies, groceries etc...">
 
-            <label asp-for="Urgency">
-                When do you need this by? (mm/dd/yyyy hh:mm)
-            </label>
+            <label asp-for="Urgency">Needed by? (mm/dd/yyyy hh:mm)</label>
             <span asp-validation-for="Urgency" class="red"></span>
-            <input id="urgency" asp-for="Urgency" type="datetime-local" placeholder="05/01/2020 10:30 AM"  value="2020-05-01T12:00">
+            <input id="urgency" asp-for="Urgency" type="datetime-local" placeholder="01/01/2020 10:30 AM"  value="2020-05-01T12:00">
 
             <label asp-for="Notes">Notes:</label>
             <textarea asp-for="Notes" placeholder="Hand soap, toilet paper, 1 gl. of milk etc..."></textarea>

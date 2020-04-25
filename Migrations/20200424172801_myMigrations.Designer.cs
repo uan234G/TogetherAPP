@@ -9,8 +9,8 @@ using finalGSA.Models;
 namespace finalGSA.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20200418215029_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20200424172801_myMigrations")]
+    partial class myMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,8 @@ namespace finalGSA.Migrations
                 {
                     b.Property<int>("RequestId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CompletedBy");
 
                     b.Property<bool>("IsCompleted");
 

@@ -203,7 +203,7 @@ namespace finalGSA.Controllers
         [HttpPost("strive_together/request-help")]
         public IActionResult submitRequest(Request newRequest)
         {
-            if (newRequest.Notes != null && newRequest.Items != null && newRequest.Urgency != null)
+            if (newRequest.Items != null && newRequest.Urgency != null)
             {
                 User userfromDb = dbContext.Users.FirstOrDefault(a => a.UserId == UserSession);
                 newRequest.UserID = userfromDb.UserId;
