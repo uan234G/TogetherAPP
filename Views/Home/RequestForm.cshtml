@@ -4,7 +4,6 @@
     <link rel="stylesheet" href="~/css/LogReg.css">
     <link rel="stylesheet" href="~/css/Queries.css">
 }
-
 <header id="LogReg-header">
     <div class="wrapper nav">
         <div class="logo" data-aos="fade-down">
@@ -26,7 +25,7 @@
     <div id="request-form" class="reg-form-box" data-aos="zoom-in">
         <form asp-action="submitRequest" asp-controller="Home" method="POST">
             <label asp-for="Items">
-                What do you need? 
+                What do you need?
                 <span asp-validation-for="Items" class="red"></span>
             </label>
             <input asp-for="Items" placeholder="House supplies, groceries etc...">
@@ -35,7 +34,7 @@
                 When do you need this by? (mm/dd/yyyy hh:mm)
             </label>
             <span asp-validation-for="Urgency" class="red"></span>
-            <input asp-for="Urgency" placeholder="01/01/2020 01:30pm">
+            <input id="urgency" asp-for="Urgency" type="datetime-local" placeholder="05/01/2020 10:30 AM"  value="2020-05-01T12:00">
 
             <label asp-for="Notes">Notes:</label>
             <textarea asp-for="Notes" placeholder="Hand soap, toilet paper, 1 gl. of milk etc..."></textarea>
@@ -44,3 +43,10 @@
         </form>
     </div>
 </section>
+<script>
+    const  mobileOnly = window.matchMedia('(min-width: 690px)');
+    const urgencyInput = document.getElementById('urgency');
+    if(mobileOnly.matches){
+        urgencyInput.removeAttribute('value');
+    }
+</script>
