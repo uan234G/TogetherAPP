@@ -31,7 +31,7 @@ namespace finalGSA.Controllers
             return View();
         }
 
-        [HttpGet("together/login")]
+        [HttpGet("strive_together/login")]
         public IActionResult Login()
         {
             return View();
