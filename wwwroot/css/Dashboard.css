@@ -123,9 +123,6 @@ table .view-btn:active{
     color: cornflowerblue;
     text-decoration: underline;
 }
-form{
-    text-align: center;
-}
 .accept-btn{
     outline: 0;
     border: 0;
@@ -136,17 +133,17 @@ form{
     letter-spacing: 1px;
     border-radius: 25px;
     padding: 5px 0;
-    width: 50%;
-    margin: 1rem auto 2rem auto;
+    width: 40%;
+    margin: 0.75rem 0 1.5rem 0;
     transition: all 0.5s ease-out;
 }
 .delete-btn{
     margin-top: 3rem;
     background-color: firebrick;
     color: #fff;
-    width: 50%;
+    width: 25%;
     font-size: 0.9rem;
-    margin: 1rem auto 2rem auto;
+    margin: 0.75rem 0 1.5rem 0;
     padding: 5px 0;
     display: block;
     text-align: center;
