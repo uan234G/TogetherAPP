@@ -68,7 +68,7 @@ namespace finalGSA.Controllers
             List<Request> NearbyRequests = new List<Request>();
             for (int zip = MinZip; zip <= MaxZip; zip++)
             {
-                List<Request> FoundRequests = dbContext.Requests.Include(s => s.Creator).Where(x => x.Creator.ZipCode == zip).ToList();
+                List<Request> FoundRequests = dbContext.Requests.Include(s => s.Creator).Where(x => x.Creator.ZipCode == zip).OrderBy(i => i.Urgency).ToList();
                 if (FoundRequests != null)
                 {
                     foreach (var item in FoundRequests)
