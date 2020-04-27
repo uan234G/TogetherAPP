@@ -10,7 +10,7 @@ namespace finalGSA.Models
         [Key]
         public int RequestId { get; set; }
 
-        [Required(ErrorMessage = "List what you need")]
+        [Required(ErrorMessage = "This field is required")]
         public string Items { get; set; }
         // user can write down everything they need in textbox
 
